@@ -255,6 +255,25 @@ importers:
         specifier: ^18.0.0
         version: 18.0.0
 
+  libs/blackjack-player:
+    dependencies:
+      '@mawhea/playing-card':
+        specifier: 'workspace:'
+        version: link:../playing-card
+    devDependencies:
+      '@mjwheatley/nx-vitest-config':
+        specifier: 'catalog:'
+        version: 0.4.1(@nx/vite@22.5.1(@babel/traverse@7.29.0)(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19))(nx@23.2.1(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19)))(typescript@5.9.3)(verdaccio@6.2.7(typanion@3.14.0))(vite@8.3.1(@types/node@25.3.0)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1))(vitest@4.0.18))(@vitest/coverage-v8@4.0.18(vitest@4.0.18))(vitest-sonar-reporter@3.0.0(vitest@4.0.18))(vitest@4.0.18)
+      '@nx/vite':
+        specifier: 'catalog:'
+        version: 22.5.1(@babel/traverse@7.29.0)(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19))(nx@23.2.1(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19)))(typescript@5.9.3)(verdaccio@6.2.7(typanion@3.14.0))(vite@8.3.1(@types/node@25.3.0)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1))(vitest@4.0.18)
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.0)(@vitest/ui@4.0.18)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1)
+      vitest-sonar-reporter:
+        specifier: 'catalog:'
+        version: 3.0.0(vitest@4.0.18)
+
   libs/blackjack-shoe:
     dependencies:
       '@mawhea/deck-of-cards':

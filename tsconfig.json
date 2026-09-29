@@ -4,10 +4,10 @@
   "files": [],
   "references": [
     {
-      "path": "./tsconfig.configs.json"
+      "path": "./libs/types"
     },
     {
-      "path": "./libs/types"
+      "path": "./libs/playing-card"
     }
   ]
 }

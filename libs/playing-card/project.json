@@ -1,0 +1,14 @@
+{
+  "name": "playing-card",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/playing-card",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "clean": {},
+    "test": {},
+    "nx-release-publish": {
+      "executor": "nx:noop"
+    }
+  }
+}

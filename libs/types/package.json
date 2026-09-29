@@ -1,11 +1,11 @@
 {
-  "name": "@nx-monorepo-template/types",
+  "name": "@mawhea/types",
   "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mjwheatley/nx-monorepo-template.git",
+    "url": "git+https://github.com/mjwheatley/playing-cards.git",
     "directory": "libs/types"
   },
   "sideEffects": false,

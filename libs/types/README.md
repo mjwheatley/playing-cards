@@ -1,4 +1,4 @@
-# @nx-monorepo-template/types
+# @mawhea/types
 
 :information_source: This package exports shared TypeScript types, Zod schemas, and type predicate or assertion functions.
 
@@ -20,12 +20,12 @@
 
 ## User Guide
 
-- Add `@nx-monorepo-template/types` to your lib or app `package.json`.
+- Add `@mawhea/types` to your lib or app `package.json`.
 
   ```json
   {
     "dependencies": {
-      "@nx-monorepo-template/types": "workspace:*"
+      "@mawhea/types": "workspace:*"
     }
   }
   ```
@@ -35,5 +35,5 @@
   Example:
 
   ```ts
-  import { ErrorResponseSchema } from '@nx-monorepo-template/types/models/errors';
+  import { ErrorResponseSchema } from '@mawhea/types/models/errors';
   ```

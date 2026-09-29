@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "import": ["@mjwheatley/cspell-dictionary"],
-  "words": ["minimatch", "startover", "thumbsdown"],
+  "words": ["mawhea", "minimatch", "startover", "thumbsdown"],
   "ignorePaths": [
     ".vscode/",
     "node_modules",

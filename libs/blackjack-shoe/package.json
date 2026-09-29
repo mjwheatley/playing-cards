@@ -1,0 +1,40 @@
+{
+  "name": "@mawhea/blackjack-shoe",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjwheatley/blackjack-shoe.git",
+    "directory": "libs/blackjack-shoe"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@mawhea/deck-of-cards": "workspace:",
+    "@mawhea/playing-card": "workspace:"
+  },
+  "devDependencies": {
+    "@nx/vite": "catalog:",
+    "@mjwheatley/nx-vitest-config": "catalog:",
+    "vitest-sonar-reporter": "catalog:",
+    "vitest": "catalog:"
+  }
+}

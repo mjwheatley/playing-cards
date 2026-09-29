@@ -1,0 +1,53 @@
+name: Pull Requests
+
+on:
+  pull_request:
+
+env:
+  HUSKY: 0
+
+permissions:
+  packages: write # to be able to publish to GitHub Packages
+  contents: write # to be able to publish a GitHub release
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
+  actions: read # to be able to find the last successful workflow run for `nx affected` to work
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: mjwheatley/mjwheatley-packages/.github/actions/setup@main
+        with:
+          node-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          set-shas: 'true'
+          main-branch-name: ${{ github.base_ref }}
+
+      - name: Quality Checks
+        uses: mjwheatley/mjwheatley-packages/.github/actions/checks@main
+
+      - name: Build and Test
+        uses: mjwheatley/mjwheatley-packages/.github/actions/build-and-test@main
+        with:
+          mode: 'affected'
+          print-affected: 'true'
+          coverage-report: 'true'
+          artifact-name-suffix: ${{ github.run_id }}-${{ github.run_number }}
+
+      - name: Release [Dry Run]
+        if: success()
+        uses: mjwheatley/mjwheatley-packages/.github/actions/release@main
+        with:
+          dry-run: 'true'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          node-auth-token: ${{ secrets.GITHUB_TOKEN }}

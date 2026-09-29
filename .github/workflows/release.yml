@@ -1,0 +1,55 @@
+name: Releases
+
+on:
+  push:
+    branches:
+      - main
+      - next
+      - beta
+      - alpha
+      - '*.x'
+
+env:
+  HUSKY: 0
+
+permissions:
+  packages: write # to be able to publish to GitHub Packages
+  contents: write # to be able to publish a GitHub release
+  issues: write # to be able to comment on released issues
+  pull-requests: write # to be able to comment on released pull requests
+  id-token: write # to enable use of OIDC for npm provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.workspace }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: mjwheatley/mjwheatley-packages/.github/actions/setup@main
+        with:
+          node-auth-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Quality Checks
+        uses: mjwheatley/mjwheatley-packages/.github/actions/checks@main
+
+      - name: Build and Test
+        uses: mjwheatley/mjwheatley-packages/.github/actions/build-and-test@main
+        with:
+          mode: 'all'
+          artifact-name-suffix: ${{ github.run_id }}-${{ github.run_number }}
+
+      - name: Release
+        if: success()
+        uses: mjwheatley/mjwheatley-packages/.github/actions/release@main
+        with:
+          dry-run: 'false'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          node-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          npm-token: ${{ secrets.NPM_TOKEN }}

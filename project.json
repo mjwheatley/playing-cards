@@ -1,0 +1,34 @@
+{
+  "name": "nx-monorepo-template",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "targets": {
+    "local-registry": {
+      "executor": "@nx/js:verdaccio",
+      "options": {
+        "port": 4873,
+        "config": ".verdaccio/config.yml",
+        "storage": "tmp/local-registry/storage"
+      }
+    },
+    "build": {
+      "executor": "nx:noop",
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["./*.{js,cjs,mjs,ts,cts,mts}"]
+      }
+    },
+    "typecheck": {
+      "cache": true,
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["tsc --build tsconfig.configs.json --verbose --pretty --noEmit"],
+        "cwd": "{projectRoot}",
+        "forwardAllArgs": false
+      }
+    }
+  }
+}

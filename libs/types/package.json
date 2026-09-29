@@ -1,0 +1,39 @@
+{
+  "name": "@nx-monorepo-template/types",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjwheatley/nx-monorepo-template.git",
+    "directory": "libs/types"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "!**/*.tsbuildinfo"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@nx/vite": "catalog:",
+    "@mjwheatley/nx-vitest-config": "catalog:",
+    "vitest-sonar-reporter": "catalog:",
+    "vitest": "catalog:"
+  }
+}

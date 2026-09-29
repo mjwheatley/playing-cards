@@ -1,0 +1,14 @@
+{
+  "name": "types",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/types",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "clean": {},
+    "test": {},
+    "nx-release-publish": {
+      "executor": "nx:noop"
+    }
+  }
+}

@@ -17,6 +17,9 @@
     },
     {
       "path": "./libs/blackjack-player"
+    },
+    {
+      "path": "./libs/blackjack-table"
     }
   ]
 }

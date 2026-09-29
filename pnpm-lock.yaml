@@ -296,6 +296,34 @@ importers:
         specifier: 'catalog:'
         version: 3.0.0(vitest@4.0.18)
 
+  libs/blackjack-table:
+    dependencies:
+      '@mawhea/blackjack-player':
+        specifier: workspace:*
+        version: link:../blackjack-player
+      '@mawhea/blackjack-shoe':
+        specifier: workspace:*
+        version: link:../blackjack-shoe
+      '@mawhea/playing-card':
+        specifier: workspace:*
+        version: link:../playing-card
+      uuid:
+        specifier: ^14.0.2
+        version: 14.0.2
+    devDependencies:
+      '@mjwheatley/nx-vitest-config':
+        specifier: 'catalog:'
+        version: 0.4.1(@nx/vite@22.5.1(@babel/traverse@7.29.0)(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19))(nx@23.2.1(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19)))(typescript@5.9.3)(verdaccio@6.2.7(typanion@3.14.0))(vite@8.3.1(@types/node@25.3.0)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1))(vitest@4.0.18))(@vitest/coverage-v8@4.0.18(vitest@4.0.18))(vitest-sonar-reporter@3.0.0(vitest@4.0.18))(vitest@4.0.18)
+      '@nx/vite':
+        specifier: 'catalog:'
+        version: 22.5.1(@babel/traverse@7.29.0)(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19))(nx@23.2.1(@swc-node/register@1.11.1(@swc/core@1.15.13(@swc/helpers@0.5.19))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.13(@swc/helpers@0.5.19)))(typescript@5.9.3)(verdaccio@6.2.7(typanion@3.14.0))(vite@8.3.1(@types/node@25.3.0)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1))(vitest@4.0.18)
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.0)(@vitest/ui@4.0.18)(esbuild@0.28.2)(jiti@2.6.1)(yaml@2.9.1)
+      vitest-sonar-reporter:
+        specifier: 'catalog:'
+        version: 3.0.0(vitest@4.0.18)
+
   libs/deck-of-cards:
     dependencies:
       '@mawhea/playing-card':
@@ -1582,7 +1610,7 @@ packages:
     peerDependencies:
       '@nx/vite': 22.5.1
       '@vitest/coverage-v8': ^4.0.18
-      vitest: '>=4.1.0'
+      vitest: '>=4.1.11'
       vitest-sonar-reporter: ^3.0.0
 
   '@mjwheatley/prettier-config@0.4.0':
@@ -1717,8 +1745,8 @@ packages:
   '@nx/vite@22.5.1':
     resolution: {integrity: sha512-Og2q6JRBYBNpMupUn4UpCuBny++Um/MIpQcfv0u0jd0B1TyBtiogYAFVxE0Vv23UezJBkI0IWr9NcjpR5rkUFw==}
     peerDependencies:
-      vite: '>=7.3.2'
-      vitest: '>=4.1.0'
+      vite: '>=7.3.5'
+      vitest: '>=4.1.11'
 
   '@nx/vitest@22.5.1':
     resolution: {integrity: sha512-Uu97DJIgqcfqO9CYhlCY+QKgMPFgKDtJjl+9E1QBUMuGRyGMJbtPQpH0ekQJOZso7Ha31QAIOozHP6yO8Qo+hQ==}
@@ -5463,7 +5491,7 @@ packages:
     resolution: {integrity: sha512-QRT5m9Z/3Kt0WVDVcFHm5LC9Ba89yDP4twlX2QUAJ9PdqfJBkLAh/kXj7m6U3i0k6GxnIEiwCc295bmAYokmZg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
-      vitest: '>=4.1.0'
+      vitest: '>=4.1.11'
 
   vitest@4.0.18:
     resolution: {integrity: sha512-hOQuK7h0FGKgBAas7v0mSAsnvrIgAvWmRFjmzpJ7SwFHH3g1k2u37JtYwOwmEKhK6ZO3v9ggDBBm0La1LCK4uQ==}

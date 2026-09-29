@@ -1,0 +1,14 @@
+{
+  "name": "blackjack-table",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/blackjack-table",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "clean": {},
+    "test": {},
+    "nx-release-publish": {
+      "executor": "nx:noop"
+    }
+  }
+}

@@ -8,6 +8,9 @@
     },
     {
       "path": "./libs/playing-card"
+    },
+    {
+      "path": "./libs/deck-of-cards"
     }
   ]
 }

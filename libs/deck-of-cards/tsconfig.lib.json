@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "rootDir": "src",
     "outDir": "dist",
     "lib": ["es2022"],
@@ -10,5 +10,9 @@
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.test.ts"],
-  "references": []
+  "references": [
+    {
+      "path": "../playing-card/tsconfig.lib.json"
+    }
+  ]
 }
